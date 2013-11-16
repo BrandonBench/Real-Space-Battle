@@ -8,8 +8,8 @@ class Bullet():
         self.height = height
         self.x      = x
         self.y      = y
-        self.speed  = 13
-        self.nspeed = -13
+        self.speed  = 20
+        self.nspeed = -20
         self.color  = color
         self.alive  = True
         self.hit    = False
