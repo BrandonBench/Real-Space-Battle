@@ -17,12 +17,15 @@ class Spaceship():
         self.color  = color
         self.Living = True
         self.hit    = False
+        self.alive  = True
         return
     
     def setAlive(self,alive):
         self.alive = alive
         return
 
+    def getAlive(self):
+        return self.alive
 
 
     def moveLeft(self, dx):

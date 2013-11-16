@@ -33,6 +33,8 @@ class SpaceshipData:
         return
 
     def evolve(self, keys, newkeys, buttons, newbuttons, mouse_position):
+        if not self.spaceship.getAlive():
+            return    
         if pygame.K_a in keys:
             self.spaceship.moveLeft(self.spaceship_speed)
             
