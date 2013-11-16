@@ -87,7 +87,19 @@ class SpaceshipData:
                     baddie.decreasehitpoints(1)
                     self.kill += 1
                     bullet.hit = False
+        
 
+        for baddie in self.baddies:
+            if not baddie.alive:
+                continue
+            if not self.spaceship.Living:
+                continue
+            x,y,w,h = baddie.getDimensions()
+            self.spaceship.checkHitBaddie(x,y,w,h)
+            if self.spaceship.hit == True:
+                self.spaceship.setAlive(False)
+                baddie.setAlive(False)
+                print baddie.alive
 
         live_bullets = []
         live_baddies = []
