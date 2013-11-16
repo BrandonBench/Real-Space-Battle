@@ -12,8 +12,8 @@ class Baddie():
         self.new_y  = y
         self.color  = color
         self.alive  = True
-        self.speed  = .2
         self.hit_points = 1
+        self.speed  = 1
         self.lives= 10
         return
         
