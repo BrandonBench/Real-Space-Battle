@@ -1,18 +1,20 @@
+#import game_mouse
 import pygame
 from random import randint
 class Bullet():
 
-    def __init__(self,width,height,x,y,color):
+    def __init__(self,width,height,x,y,color, direction):
         self.width  = width
         self.height = height
         self.x      = x
         self.y      = y
-        self.speed  = 35
-        self.nspeed = -35
+        self.speed  = 13
+        self.nspeed = -13
         self.color  = color
         self.alive  = True
         self.hit    = False
-        
+        self.direction = direction
+#        self.mousePoint = game_mouse.mouse_position
         return
 
     def checkHitBaddie(self,x,y,w,h):
@@ -26,7 +28,14 @@ class Bullet():
         return
 
     def moveBullet(self):
-        self.x += self.speed
+    	if self.direction == 'up':
+    	    self.y += self.speed
+    	if self.direction == 'down':
+    		self.y -= self.speed
+    	if self.direction == 'right':
+    		self.x += self.speed
+    	if self.direction == 'left':
+    		self.x -= self.speed
         return
     
     
@@ -51,6 +60,7 @@ class Bullet():
         pygame.draw.rect(surface, self.color, rect)
         return
         
+    
     
     
         
