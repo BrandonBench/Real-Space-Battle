@@ -8,6 +8,11 @@ class SpaceshipAdventure(Game):
         self.newGame(width,height,frame_rate)
         return
     
+    pygame.mixer.init()
+    pygame.mixer.music.load("epicsax.mp3")
+    pygame.mixer.music.set_volume(0.2)
+    pygame.mixer.music.play(-1)
+
     def game_logic(self, keys, newkeys, buttons, newbuttons, mouse_position):
         self.data.evolve(keys, newkeys, buttons, newbuttons, mouse_position)
         return
@@ -15,6 +20,7 @@ class SpaceshipAdventure(Game):
     def paint(self, surface):
         self.data.draw(surface)
         return
+    
 
     
     def newGame(self,width, height, frame_rate):
