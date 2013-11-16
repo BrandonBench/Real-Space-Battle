@@ -21,7 +21,7 @@ class SpaceshipAdventure(Game):
         self.width = width
         self.height = height
         self.frame_rate = frame_rate
-        Game.__init__(self, "Spaceship Adventure", width, height, frame_rate)   
+        Game.__init__(self, "Space Battler!", width, height, frame_rate)   
         self.data = SpaceshipData(width,height,frame_rate)
         
         return
