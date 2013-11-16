@@ -5,6 +5,7 @@ from bullet import Bullet
 class Spaceship():
 
     def __init__(self,width,height,x,y,color):
+    	self.image = pygame.image.load("ship.png")
         self.width  = width
         self.height = height
         self.x      = x
@@ -45,6 +46,6 @@ class Spaceship():
     
     def draw(self, surface):
         rect = pygame.Rect( self.x, self.y, self.width, self.height )
-        pygame.draw.rect(surface, self.color, rect)
+        surface.blit(self.image, (self.x, self.y))
         return
         
