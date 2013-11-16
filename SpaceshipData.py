@@ -65,11 +65,11 @@ class SpaceshipData:
             bullet.moveBullet()
             bullet.checkBackWall(self.width)     
 
-        if random.randint(1, 1500/(self.kill+2)) == 1:
+        if random.randint(1, 1000/(self.kill+1)) == 1:
             self.addBaddie()
-        elif random.randint(1, 1700/(self.kill+2)) == 1:
+        elif random.randint(1, 1200/(self.kill+1)) == 1:
             self.addStrongBaddie()
-        elif random.randint(1, 2000/(self.kill+2)) ==1:
+        elif random.randint(1, 1500/(self.kill+1)) ==1:
             self.addStrongerBaddie()
 
 

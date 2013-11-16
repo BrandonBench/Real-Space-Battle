@@ -10,7 +10,7 @@ class Bullet():
         self.y      = y
         self.speed  = 20
         self.nspeed = -20
-        self.color  = color
+        self.color  = (0,0,123)
         self.alive  = True
         self.hit    = False
         self.direction = direction
