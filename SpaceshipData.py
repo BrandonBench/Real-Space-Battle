@@ -29,7 +29,6 @@ class SpaceshipData:
         self.score_color = (255, 255, 255)
         self.score_x = 20
         self.score_y = 30
-        self.R = 1 or 2 or 3 or 4
         return
 
     def evolve(self, keys, newkeys, buttons, newbuttons, mouse_position):
@@ -104,7 +103,6 @@ class SpaceshipData:
         return
 
     def addBaddie(self):
-        #random 1-4
 
         new_baddie = Baddie( self.baddie_width, self.baddie_height, self.width, random.randint(0,(self.height-self.baddie_height)), self.baddie_color )
         new_baddie.getAlive()
