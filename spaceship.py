@@ -5,11 +5,11 @@ from bullet import Bullet
 class Spaceship():
 
     def __init__(self,width,height,x,y,color):
-    	self.imager = pygame.image.load("playerShipRight.png")
-    	self.imagel = pygame.image.load("playerShipLeft.png")
-    	self.imageu = pygame.image.load("playerShipUp.png")
-    	self.imaged = pygame.image.load("playerShipdwn.png")
-    	self.direction = None
+        self.imager = pygame.image.load("playerShipRight.png")
+        self.imagel = pygame.image.load("playerShipLeft.png")
+        self.imageu = pygame.image.load("playerShipUp.png")
+        self.imaged = pygame.image.load("playerShipdwn.png")
+        self.direction = None
         self.width  = width
         self.height = height
         self.x      = x
@@ -26,7 +26,7 @@ class Spaceship():
 
 
     def moveLeft(self, dx):
-    	self.direction = "left"
+        self.direction = "left"
         self.x -= dx
         # check the wall
         if self.x < 0:
@@ -34,7 +34,7 @@ class Spaceship():
         return
 
     def moveRight(self, dx, upper_limit):
-    	self.direction = "right"
+        self.direction = "right"
         self.x += dx
         # check the wall
         if self.x > upper_limit:
@@ -42,7 +42,7 @@ class Spaceship():
         return
 
     def moveUp(self, dy):
-    	self.direction = "down"
+        self.direction = "down"
         self.y -= dy
         # check the wall
         if self.y < 0:
@@ -58,7 +58,7 @@ class Spaceship():
         return
 
     def fire(self,width,height,color,direction):
-    	self.direction = direction
+        self.direction = direction
         return Bullet(width,height,(self.x + self.width) , (self.y + (self.height /2) - (height/2)),color,direction)
     
     def hitRectangle(self, x, y, w, h):
@@ -68,22 +68,22 @@ class Spaceship():
                 (self.y <= y + h)):
                 self.Living = False
                 return True
-        return False
+            return False
 
 
     def draw(self, surface):
-    	if self.Living == True:
-        	rect = pygame.Rect( self.x, self.y, self.width, self.height)
+        if self.Living == True:
+            rect = pygame.Rect( self.x, self.y, self.width, self.height)
         
-        	if self.direction == "right":
-        		surface.blit(self.imager, (self.x, self.y))
-        	if self.direction == "left":
-        		surface.blit(self.imagel, (self.x, self.y))
-        	if self.direction == "up":
-    			surface.blit(self.imaged, (self.x, self.y))
-    		if self.direction == "down":
-    			surface.blit(self.imageu, (self.x, self.y))
-    		return
+            if self.direction == "right":
+                surface.blit(self.imager, (self.x, self.y))
+            if self.direction == "left":
+                surface.blit(self.imagel, (self.x, self.y))
+            if self.direction == "up":
+                surface.blit(self.imaged, (self.x, self.y))
+            if self.direction == "down":
+                surface.blit(self.imageu, (self.x, self.y))
+            return
 
     def checkHitBaddie(self,x,y,w,h):
         if self.hitRectangle(x,y,w,h):

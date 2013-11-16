@@ -3,6 +3,7 @@ import random
 from spaceship import Spaceship
 from baddie import Baddie
 
+
 class SpaceshipData:
 
     def __init__(self,width,height,frame_rate):
