@@ -45,17 +45,17 @@ class SpaceshipData:
             self.spaceship.moveDown(self.spaceship_speed,self.height)
 
         if pygame.K_RIGHT in newkeys:
-            self.bullets.append(self.spaceship.fire(self.bullet_width,self.bullet_height,self.bullet_color))
+            self.bullets.append(self.spaceship.fire(self.bullet_width,self.bullet_height,self.bullet_color, direction = "right"))
             
             
         if pygame.K_LEFT in newkeys:
-            self.bullets.append(self.spaceship.fire(self.bullet_width,self.bullet_height,self.bullet_color))
+            self.bullets.append(self.spaceship.fire(self.bullet_width,self.bullet_height,self.bullet_color, direction = "left"))
             
         if pygame.K_UP in newkeys:
-            self.bullets.append(self.spaceship.fire(self.bullet_width,self.bullet_height,self.bullet_color))   
+            self.bullets.append(self.spaceship.fire(self.bullet_width,self.bullet_height,self.bullet_color, direction = "down"))   
         
         if pygame.K_DOWN in newkeys:
-            self.bullets.append(self.spaceship.fire(self.bullet_width,self.bullet_height,self.bullet_color))   
+            self.bullets.append(self.spaceship.fire(self.bullet_width,self.bullet_height,self.bullet_color, direction = "up"))   
              
         for bullet in self.bullets:
             bullet.moveBullet()

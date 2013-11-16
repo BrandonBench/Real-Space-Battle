@@ -41,8 +41,8 @@ class Spaceship():
             self.y = board_height - self.height
         return
 
-    def fire(self,width,height,color):
-        return Bullet(width,height,(self.x + self.width) , (self.y + (self.height /2) - (height/2)),color)
+    def fire(self,width,height,color,direction):
+        return Bullet(width,height,(self.x + self.width) , (self.y + (self.height /2) - (height/2)),color,direction)
     
     def draw(self, surface):
         rect = pygame.Rect( self.x, self.y, self.width, self.height )
