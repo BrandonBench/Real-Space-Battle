@@ -10,7 +10,7 @@ class SpaceshipAdventure(Game):
     
     pygame.mixer.init()
     pygame.mixer.music.load("epicsax.mp3")
-    pygame.mixer.music.set_volume(0.5)
+    pygame.mixer.music.set_volume(0.7)
     pygame.mixer.music.play(-1)
 
     def game_logic(self, keys, newkeys, buttons, newbuttons, mouse_position):
